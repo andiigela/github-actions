@@ -9,7 +9,10 @@ on:
       - synchronize
       - reopened
     paths:
-      - ".github/workflows/*.yml"
+      - "*.txt"
+
+  schedule:
+    - cron: "0 0 * * *"
 
   workflow_dispatch:
 
