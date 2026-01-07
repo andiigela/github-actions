@@ -29,4 +29,4 @@ jobs:
       - name: Inspect values outside consumer
         run: |
           echo "Value from producer: ${{needs.producer.outputs.foo}}"
-          echo "FOO in consumer: ${FOO}"
+          echo "FOO in consumer: ${FOO:null}"
