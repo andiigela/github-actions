@@ -1,10 +1,11 @@
-name: "Environment / Repo Variables"
+name: "Environment / Repo Variables - Test 5"
 on:
   workflow_dispatch:
 
 jobs:
   staging-environment:
     runs-on: ubuntu-22.04
+    environment: staging
     env:
       EXAMPLE_ENVIRONMENT_SECRET: ${{ secrets.EXAMPLE_ENVIRONMENT_SECRET }}
       EXAMPLE_REPOSITORY_SECRET: ${{ secrets.EXAMPLE_REPOSITORY_SECRET }}
