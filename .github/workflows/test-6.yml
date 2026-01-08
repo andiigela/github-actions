@@ -1,0 +1,33 @@
+name: Artifacts - Test 6
+
+on:
+  workflow_dispatch:
+
+jobs:
+  artifact-producer:
+    name: Artifact Producer
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Create artifact file
+        run: |
+          echo "Hello, World!" > artifact.txt
+          echo "Hello again, it's me." >> artifact.txt
+      - name: Upload artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: my-artifact
+          path: artifact.txt
+
+  artifact-consumer:
+    name: Artifact Consumer
+    runs-on: ubuntu-22.04
+    needs: artifact-producer
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: my-artifact
+
+      - name: Consume artifact
+        run: cat artifact.txt
+
