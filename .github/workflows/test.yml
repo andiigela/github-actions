@@ -1,21 +1,21 @@
-name: Test
-
-on:
-  workflow_dispatch:
-
-jobs:
-  hello-inline-bash:
-    runs-on: ubuntu-22.04
-    steps:
-      - run: echo "Hello, world!"
-  hello-inline-python:
-    runs-on: ubuntu-22.04
-    steps:
-      - run: "print('Hello, world!')"
-        shell: python
-  hello-action:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94427b
-        with:
-          who-to-greet: 'Mona the Octocat'
+#name: Test
+#
+#on:
+#  workflow_dispatch:
+#
+#jobs:
+#  hello-inline-bash:
+#    runs-on: ubuntu-22.04
+#    steps:
+#      - run: echo "Hello, world!"
+#  hello-inline-python:
+#    runs-on: ubuntu-22.04
+#    steps:
+#      - run: "print('Hello, world!')"
+#        shell: python
+#  hello-action:
+#    runs-on: ubuntu-22.04
+#    steps:
+#      - uses: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94427b
+#        with:
+#          who-to-greet: 'Mona the Octocat'

@@ -1,0 +1,16 @@
+name: ActionsInAction-1.yml
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  FirstJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.5.2
+      - run: | 
+          echo "Listing all ${github.repository} files"
+          tree

@@ -1,17 +1,17 @@
-name: Artifacts - Test 7
-
-# permissions - MUST CHECK THIS!
-on:
-  workflow_dispatch:
-
-jobs:
-  artifact-producer:
-    name: Testing Concurrency
-    runs-on: ubuntu-22.04
-    concurrency:
-      group: ${{ github.workflow }}-${{github.ref}}
-      cancel-in-progress: true
-    steps:
-      - name: Create artifact file
-        run: |
-          echo "Hello, World!"
+#name: Artifacts - Test 7
+#
+## permissions - MUST CHECK THIS!
+#on:
+#  workflow_dispatch:
+#
+#jobs:
+#  artifact-producer:
+#    name: Testing Concurrency
+#    runs-on: ubuntu-22.04
+#    concurrency:
+#      group: ${{ github.workflow }}-${{github.ref}}
+#      cancel-in-progress: true
+#    steps:
+#      - name: Create artifact file
+#        run: |
+#          echo "Hello, World!"
